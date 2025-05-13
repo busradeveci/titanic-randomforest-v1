@@ -77,7 +77,4 @@ Planned improvements and experiments:
 ---
 
 ## 🧑‍💻 Author
-
-**Büşra Deveci**  
-GitHub: [github.com/yourusername](https://github.com/busradeveci)  
 Kaggle: [kaggle.com/busradeveci](https://www.kaggle.com/busradeveci)
