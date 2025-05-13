@@ -15,70 +15,69 @@ This repository contains my solution to the classic Kaggle competition: **Titani
 
 ## 📁 Dataset
 
-The dataset consists of three files:
-
-- `train.csv`: Training data with survival labels.
-- `test.csv`: Test data used for submission.
-- `gender_submission.csv`: A sample submission file provided by Kaggle.
+The dataset includes passenger details such as age, gender, ticket class, number of siblings/spouses aboard, and fare. These features were used to build the model.
 
 ---
 
 ## 🧹 Data Preprocessing
 
-The following steps were applied to prepare the data:
+The following preprocessing steps were applied:
 
-- Dropped unused columns: `PassengerId`, `Name`, `Ticket`, `Cabin`
+- Dropped unnecessary columns: `PassengerId`, `Name`, `Ticket`, `Cabin`
 - Filled missing values:
-  - `Age`: Replaced with median
-  - `Embarked`: Filled with the mode ('S')
-  - `Fare`: Filled with median (for test set)
-- Applied **One-Hot Encoding** to:
-  - `Sex` (converted to binary)
-  - `Embarked` (created dummy variables)
+  - `Age`: Filled with median
+  - `Embarked`: Filled with mode (`'S'`)
+  - `Fare`: Filled with median (only in test set)
+- Converted categorical variables:
+  - `Sex`: Binary mapping
+  - `Embarked`: One-Hot Encoding
 
 ---
 
 ## 🤖 Model
 
-- **Algorithm**: Random Forest Classifier (from `sklearn.ensemble`)
-- **Train/Test Split**: 80% train, 20% validation (for local evaluation)
-- **Features Used**:
+- **Algorithm**: `RandomForestClassifier` from `sklearn.ensemble`
+- **Training-Validation Split**: 80% training / 20% validation
+- **Selected Features**:
   - `Pclass`
   - `Sex`
   - `Age`
   - `SibSp`
   - `Parch`
   - `Fare`
-  - `Embarked` (dummy variables)
+  - One-hot encoded `Embarked`
+
+The model was trained and evaluated using basic performance metrics.
 
 ---
 
-## 📈 Submission Result
+## 📈 Results
 
-- Predictions were saved in `submission.csv`
-- Submitted via Kaggle
-- **Public Score**: `0.76076` (Version 1)
-
----
-
-## 🚀 Next Steps / To Do
-
-- Apply feature scaling (e.g., StandardScaler)
-- Experiment with other models (Logistic Regression, XGBoost, SVM)
-- Use `GridSearchCV` for hyperparameter tuning
-- Perform feature importance analysis
+- Achieved a public Kaggle score of **0.76076**
+- This was the first version of the model and performed well on the leaderboard.
 
 ---
 
-## 🔗 Useful Links
+## 🚀 Next Steps
+
+Planned improvements and experiments:
+
+- Try other models (e.g., Logistic Regression, XGBoost)
+- Perform hyperparameter tuning using GridSearchCV
+- Use feature importance to select or engineer better features
+- Consider using cross-validation for more reliable evaluation
+
+---
+
+## 🔗 Resources
 
 - 📓 Kaggle Notebook: [Titanic - Random Forest v1](https://www.kaggle.com/code/busradeveci/titanic-randomforest-v1)
-- 📁 Competition Page: [Kaggle Titanic](https://www.kaggle.com/competitions/titanic)
+- 🏆 Competition Page: [Kaggle Titanic](https://www.kaggle.com/competitions/titanic)
 
 ---
 
 ## 🧑‍💻 Author
 
 **Büşra Deveci**  
-Contact: [GitHub](https://github.com/busradeveci) | [Kaggle](https://www.kaggle.com/busradeveci)
-
+GitHub: [github.com/yourusername](https://github.com/busradeveci)  
+Kaggle: [kaggle.com/busradeveci](https://www.kaggle.com/busradeveci)
